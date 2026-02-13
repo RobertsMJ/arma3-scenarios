@@ -8,11 +8,20 @@ class Header
   maxPlayers = 10;
 };
 class CfgRadioStations {
-	class my_station {
+	class my_station01 {
 		name = "OpenTTD";
 		url = "http://radio.personalspaceshow.lawyer/openTTD_low";
 	};
+	class my_station02 {
+		name = "B104.7";
+		url = "http://radio.personalspaceshow.lawyer/b1047";
+	};
+	class my_station03 {
+		name = "KUOW FM";
+		url = "http://radio.personalspaceshow.lawyer/KUOW";
+	};
 };
+
 onLoadName = MISSIONNAME;
 onLoadMission = MISSIONNAMEFULL;
 OnLoadMissionTime = FALSE;

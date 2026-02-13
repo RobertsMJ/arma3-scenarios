@@ -19,12 +19,16 @@ tasks:
       - task: takistan
         vars:
           OUT_PATH: '{{.LOCAL_OUT_PATH}}'
+      - task: sahrani
+        vars:
+          OUT_PATH: '{{.LOCAL_OUT_PATH}}'
   build:
     cmds:
       - task: clean
       - task: altis
       - task: tanoa
       - task: takistan
+      - task: sahrani
       - tar -czvf {{.ARCHIVE_FILE}}.tar.gz -C '{{.OUT_PATH}}' .
       - mv {{.ARCHIVE_FILE}}.tar.gz '{{.OUT_PATH}}'
   clean:
@@ -42,3 +46,7 @@ tasks:
     cmds:
       - cp -r co10_Escape_CUP_RU_vs_BAF22.Takistan/ "{{.OUT_PATH}}/"
       - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_RU_vs_BAF22.Takistan'
+  sahrani:
+    cmds:
+      - cp -r co10_Escape_CUP_USMC_vs_SLA0.Sara/ "{{.OUT_PATH}}/"
+      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_USMC_vs_SLA0.Sara'
