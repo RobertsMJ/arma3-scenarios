@@ -516,21 +516,21 @@ class Mission
 		class Item24
 		{
 			dataType="Marker";
-			position[]={6328.1694,53.75,7475.9902};
+			position[]={6396.8521,55.694412,7477.2944};
 			name="A3E_ExtractionPos1";
 			type="Empty";
 			colorName="ColorPink";
 			id=34;
-			atlOffset=3.3919144;
 		};
 		class Item25
 		{
 			dataType="Marker";
-			position[]={6357.6797,50.138714,7543.3198};
+			position[]={6285.8345,8.8471804,7998.291};
 			name="A3E_ExtractionPos1_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=35;
+			atlOffset=9.5367432e-07;
 		};
 		class Item26
 		{
@@ -545,7 +545,7 @@ class Mission
 		class Item27
 		{
 			dataType="Marker";
-			position[]={7147.2397,4.8600001,8447.0068};
+			position[]={7050.812,4.8611836,8290.2861};
 			name="A3E_ExtractionPos2";
 			type="Empty";
 			colorName="ColorPink";
@@ -554,12 +554,11 @@ class Mission
 		class Item28
 		{
 			dataType="Marker";
-			position[]={7117.481,4.7800002,8406.5635};
+			position[]={7373.9141,5.4602323,8815.7148};
 			name="A3E_ExtractionPos2_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=38;
-			atlOffset=0.00034332275;
 		};
 		class Item29
 		{
@@ -574,17 +573,16 @@ class Mission
 		class Item30
 		{
 			dataType="Marker";
-			position[]={9026.9814,108.012,10739.077};
+			position[]={8993.8525,110.05521,10754.984};
 			name="A3E_ExtractionPos3";
 			type="Empty";
 			colorName="ColorPink";
 			id=40;
-			atlOffset=-0.00032043457;
 		};
 		class Item31
 		{
 			dataType="Marker";
-			position[]={9071.6201,103.3906,10753.958};
+			position[]={9116.6211,114.96178,10623.719};
 			name="A3E_ExtractionPos3_1";
 			type="Empty";
 			colorName="ColorPink";
@@ -603,22 +601,20 @@ class Mission
 		class Item33
 		{
 			dataType="Marker";
-			position[]={9464.5596,4.4299998,4834.354};
+			position[]={9380.5449,36.990002,5003.8848};
 			name="A3E_ExtractionPos4";
 			type="Empty";
 			colorName="ColorPink";
 			id=43;
-			atlOffset=0.00040721893;
 		};
 		class Item34
 		{
 			dataType="Marker";
-			position[]={9391.3291,5.533,4860.3672};
+			position[]={9235.5127,17.192141,5081.1167};
 			name="A3E_ExtractionPos4_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=44;
-			atlOffset=6.6757202e-006;
 		};
 		class Item35
 		{
@@ -633,17 +629,16 @@ class Mission
 		class Item36
 		{
 			dataType="Marker";
-			position[]={13273.594,14.905,6646.3652};
+			position[]={13203.595,21.424458,6751.4043};
 			name="A3E_ExtractionPos5";
 			type="Empty";
 			colorName="ColorPink";
 			id=46;
-			atlOffset=-0.00046539307;
 		};
 		class Item37
 		{
 			dataType="Marker";
-			position[]={13226.771,13.535006,6589.7393};
+			position[]={13268.642,13.995,6862.8838};
 			name="A3E_ExtractionPos5_1";
 			type="Empty";
 			colorName="ColorPink";
@@ -662,22 +657,20 @@ class Mission
 		class Item39
 		{
 			dataType="Marker";
-			position[]={7883.4219,176.69701,7434.8501};
+			position[]={7714.8477,190.76181,7485.0688};
 			name="A3E_ExtractionPos6";
 			type="Empty";
 			colorName="ColorPink";
 			id=49;
-			atlOffset=7.6293945e-005;
 		};
 		class Item40
 		{
 			dataType="Marker";
-			position[]={7820.9468,177.13,7452.7451};
+			position[]={8133.165,176.985,7790.2261};
 			name="A3E_ExtractionPos6_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=50;
-			atlOffset=0.0004119873;
 		};
 		class Item41
 		{
@@ -692,22 +685,21 @@ class Mission
 		class Item42
 		{
 			dataType="Marker";
-			position[]={13597.98,26.377001,11090.535};
+			position[]={13384.269,27.872408,11149.328};
 			name="A3E_ExtractionPos7";
 			type="Empty";
 			colorName="ColorPink";
 			id=52;
-			atlOffset=-0.00036811829;
+			atlOffset=1.9073486e-06;
 		};
 		class Item43
 		{
 			dataType="Marker";
-			position[]={13591.422,27.729,11161.912};
+			position[]={13720.618,27.104607,10618.687};
 			name="A3E_ExtractionPos7_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=53;
-			atlOffset=0.00030136108;
 		};
 		class Item44
 		{
@@ -722,16 +714,17 @@ class Mission
 		class Item45
 		{
 			dataType="Marker";
-			position[]={7543.5469,33.862968,15514.567};
+			position[]={7579.6436,51.863747,15662.476};
 			name="A3E_ExtractionPos8";
 			type="Empty";
 			colorName="ColorPink";
 			id=55;
+			atlOffset=10.283657;
 		};
 		class Item46
 		{
 			dataType="Marker";
-			position[]={7557.8179,34.685501,15558.734};
+			position[]={7722.1143,1.8206789,15619.076};
 			name="A3E_ExtractionPos8_1";
 			type="Empty";
 			colorName="ColorPink";
@@ -750,22 +743,20 @@ class Mission
 		class Item48
 		{
 			dataType="Marker";
-			position[]={12324.76,20.309,18137.641};
+			position[]={12518.669,30.959999,17695.361};
 			name="A3E_ExtractionPos9";
 			type="Empty";
 			colorName="ColorPink";
 			id=58;
-			atlOffset=0.00010299683;
 		};
 		class Item49
 		{
 			dataType="Marker";
-			position[]={12372.344,20.761,18137.945};
+			position[]={12103.064,25.965,17747.332};
 			name="A3E_ExtractionPos9_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=59;
-			atlOffset=-0.00015640259;
 		};
 		class Item50
 		{
@@ -780,22 +771,20 @@ class Mission
 		class Item51
 		{
 			dataType="Marker";
-			position[]={13949.457,26.516001,16639.266};
+			position[]={13919.007,26.241392,16693.826};
 			name="A3E_ExtractionPos10";
 			type="Empty";
 			colorName="ColorPink";
 			id=62;
-			atlOffset=0.00036621094;
 		};
 		class Item52
 		{
 			dataType="Marker";
-			position[]={13984.813,25.940001,16662.836};
+			position[]={13982.706,24.107975,16479.086};
 			name="A3E_ExtractionPos10_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=63;
-			atlOffset=-0.00042724609;
 		};
 		class Item53
 		{
@@ -810,22 +799,20 @@ class Mission
 		class Item54
 		{
 			dataType="Marker";
-			position[]={16721.385,233.16,11818.888};
+			position[]={17382.955,41.586941,13639.582};
 			name="A3E_ExtractionPos11";
 			type="Empty";
 			colorName="ColorPink";
 			id=65;
-			atlOffset=-6.1035156e-005;
 		};
 		class Item55
 		{
 			dataType="Marker";
-			position[]={16665.188,237.47,11782.656};
+			position[]={17436.746,175.883,12295.357};
 			name="A3E_ExtractionPos11_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=66;
-			atlOffset=-0.00044250488;
 		};
 		class Item56
 		{
@@ -840,22 +827,20 @@ class Mission
 		class Item57
 		{
 			dataType="Marker";
-			position[]={14909.316,125.397,12908.254};
+			position[]={14804.347,150.28047,12755.042};
 			name="A3E_ExtractionPos12";
 			type="Empty";
 			colorName="ColorPink";
 			id=68;
-			atlOffset=-0.00019836426;
 		};
 		class Item58
 		{
 			dataType="Marker";
-			position[]={14877.768,123.18,12966.914};
+			position[]={14741.479,48.76334,13664.631};
 			name="A3E_ExtractionPos12_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=69;
-			atlOffset=0.00022888184;
 		};
 		class Item59
 		{
@@ -870,22 +855,20 @@ class Mission
 		class Item60
 		{
 			dataType="Marker";
-			position[]={15572.237,26.347,8675.6846};
+			position[]={15623.644,29.904774,8860.5};
 			name="A3E_ExtractionPos13";
 			type="Empty";
 			colorName="ColorPink";
 			id=71;
-			atlOffset=0.0001335144;
 		};
 		class Item61
 		{
 			dataType="Marker";
-			position[]={15513.084,28.535,8639.6982};
+			position[]={15595.64,29.458559,8818.8682};
 			name="A3E_ExtractionPos13_1";
 			type="Empty";
 			colorName="ColorPink";
 			id=72;
-			atlOffset=-7.6293945e-005;
 		};
 	};
 };
