@@ -2,9 +2,10 @@
 
 version: '3'
 
+dotenv: ['.env'] # Ensure you have an .env file with LOCAL_OUT_PATH mapped to your mpmissions directory. See README for example
+
 vars:
   OUT_PATH: './out'
-  LOCAL_OUT_PATH: '/mnt/c/Users/rober/Documents/Arma 3 - Other Profiles/mitch/mpmissions'
   ARCHIVE_FILE: arma3missions
 
 tasks:
@@ -12,16 +13,16 @@ tasks:
     cmds:
       - task: altis
         vars:
-          OUT_PATH: '{{.LOCAL_OUT_PATH}}'
+          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
       - task: tanoa
         vars:
-          OUT_PATH: '{{.LOCAL_OUT_PATH}}'
+          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
       - task: takistan
         vars:
-          OUT_PATH: '{{.LOCAL_OUT_PATH}}'
+          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
       - task: sahrani
         vars:
-          OUT_PATH: '{{.LOCAL_OUT_PATH}}'
+          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
   build:
     cmds:
       - task: clean

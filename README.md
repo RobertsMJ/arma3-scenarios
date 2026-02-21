@@ -2,6 +2,14 @@
 
 Modified Arma 3 scenarios, primarily the excellent co10 escapes.
 
+# Environment variables
+Running `task local` requires a path to your multiplayer missions directory to automatically move compiled missions into. Set this in a `.env` file at the root of this repository and define a `LOCAL_OUT_PATH` variable.
+
+Example for a WSL setup:
+```bash
+LOCAL_OUT_PATH=/mnt/c/Users/YOUR_USER/Documents/Arma 3 - Other Profiles/YOUR_ARMA_NAME/mpmissions
+```
+
 # Credits
 
 Original Mission (Arma2) by Engima of Östgöta Ops.
