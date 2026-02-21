@@ -94,7 +94,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Escape Tanoa CUP RU vs BAF 1.10 (Chip's version)";
+		briefingName="Escape Tanoa $FACTION 1.10 (Chip's version)";
 		overviewText="Fight to escape the green hell or die trying.";
 		startWeather=0.099999994;
 		startWind=0.099999994;

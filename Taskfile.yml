@@ -11,10 +11,14 @@ vars:
   FACTIONS: ['CUP_RU_vs_BAF', 'CUP_USMC_vs_SLA']
 
 tasks:
+  build:
+    silent: true
+    task: build-maps
   build-maps:
+    silent: true
     cmds:
-      # - task: clean
-      # - task: ensure-out-dir
+      - task: clean
+      - task: ensure-out-dir
       - for:
           matrix:
             MAP:
@@ -25,56 +29,31 @@ tasks:
         vars:
           MAP: '{{.ITEM.MAP}}'
           FACTION: '{{.ITEM.FACTION}}'
+          OUT_PATH: '{{$.OUT_PATH}}'
         # cmd:
         #   echo "co10_Escape_{{.ITEM.FACTION}}.{{.ITEM.MAP}}"
   ensure-out-dir:
     cmds:
       - mkdir -p '{{.OUT_PATH}}'
   build-map:
+    silent: true
     cmds:
-      - echo "co10_Escape_{{.FACTION}}.{{.MAP}}"
-      # - cp -r co10_Escape_{{.FACTION}}.{{.MAP}}/ "{{.OUT_PATH}}/"
-      # - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
-
+      - echo "Building co10_Escape_{{.FACTION}}.{{.MAP}}"
+      - cp -r maps/{{.MAP}}/ "{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}"
+      - |
+        FACTION="{{.FACTION}}" \
+        envsubst < maps/{{.MAP}}/mission.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
+      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
+      - |
+        MAP="{{.MAP}}" \
+        FACTION="{{.FACTION}}" \
+        envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
+      - cp 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units/UnitClasses.sqf'
   local:
     cmds:
-      - task: altis
+      - task: build-maps
         vars:
           OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
-      - task: tanoa
-        vars:
-          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
-      - task: takistan
-        vars:
-          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
-      - task: sahrani
-        vars:
-          OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
-  build:
-    cmds:
-      - task: clean
-      - task: altis
-      - task: tanoa
-      - task: takistan
-      - task: sahrani
-      - tar -czvf {{.ARCHIVE_FILE}}.tar.gz -C '{{.OUT_PATH}}' .
-      - mv {{.ARCHIVE_FILE}}.tar.gz '{{.OUT_PATH}}'
   clean:
     cmds:
       - rm -rf "{{.OUT_PATH}}"
-  altis:
-    cmds:
-      - mkdir -p "{{.OUT_PATH}}" && cp -r co10_Escape_CUP_RU_vs_BAF0.Altis/ "{{.OUT_PATH}}/"
-      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_RU_vs_BAF0.Altis'
-  tanoa:
-    cmds:
-      - cp -r co10_Escape_CUP_RU_vs_BAF2.Tanoa/ "{{.OUT_PATH}}/"
-      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_RU_vs_BAF2.Tanoa'
-  takistan:
-    cmds:
-      - cp -r co10_Escape_CUP_RU_vs_BAF22.Takistan/ "{{.OUT_PATH}}/"
-      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_RU_vs_BAF22.Takistan'
-  sahrani:
-    cmds:
-      - cp -r co10_Escape_CUP_USMC_vs_SLA0.Sara/ "{{.OUT_PATH}}/"
-      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_USMC_vs_SLA0.Sara'

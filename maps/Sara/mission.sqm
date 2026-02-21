@@ -25,7 +25,9 @@ class EditorData
 binarizationWanted=0;
 addons[]=
 {
-	"CUP_Creatures_Military_USMC","CUP_Creatures_Military_SLA","CUP_Creatures_Military_RACS",
+	"CUP_Creatures_Military_USMC",
+	"CUP_Creatures_Military_SLA",
+	"CUP_Creatures_Military_RACS",
 	"A3_Characters_F",
 	"A3_Modules_F",
 	"A3_Ui_F"
@@ -63,7 +65,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Escape Sahrani CUP USMC vs SLA 1.10 (Chip's Version)";
+		briefingName="Escape Sahrani $FACTION 1.10 (Chip's Version)";
 		timeOfChanges=1800.0002;
 		startWeather=0.15000001;
 		startWind=0.1;

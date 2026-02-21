@@ -119,7 +119,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Escape Takistan CUP RU vs BAF 1.10 (Chip's version)";
+		briefingName="Escape Takistan $FACTION 1.10 (Chip's version)";
 		resistanceWest=0;
 		startWeather=0;
 		startWind=0.099999994;
