@@ -1,7 +1,7 @@
 /*
  * Description: This file contains the vehicle types and unit types for the units spawned in the mission, and the weapons and magazines found in ammo boxes/cars.
- * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain 
- * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a 
+ * "Random array" (used below) means that array will be used to spawn units, and that chance is 1/n that each element will be spawned on each spawn. The array can contain
+ * many elements of the same type, so the example array ["Offroad_DSHKM_INS", "Pickup_PK_INS", "Pickup_PK_INS"] will spawn an Offroad with 1/3 probability, and a
  * Pickup with 2/3 probability.
  */
 
@@ -400,7 +400,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_M1A1_Woodland_USMC"
 		,"CUP_B_M1A2_TUSK_MG_USMC"];
         a3e_arr_Escape_MilitaryTraffic_EnemyVehicleClasses_IND = [
-		//Unarmed Cars  1 set 
+		//Unarmed Cars  1 set
 		"CUP_I_LR_Ambulance_RACS"
 		,"CUP_I_LR_Ambulance_RACS"
 		,"CUP_I_LR_Ambulance_RACS"
@@ -516,7 +516,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
-		//Heavily Armed APCs or AA  1 set  
+		//Heavily Armed APCs or AA  1 set
 		,"CUP_B_AAV_USMC"
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
@@ -561,10 +561,10 @@ switch (_enemyFrequency) do {
 		,"CUP_I_M113_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //2
 		,"CUP_I_M113_RACS"
-		,"CUP_I_M113_RACS_URB"  
+		,"CUP_I_M113_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //3
 		,"CUP_I_M113_RACS"
-		,"CUP_I_M113_RACS_URB"  
+		,"CUP_I_M113_RACS_URB"
 		,"CUP_I_LAV25_HQ_RACS"  //4
 		,"CUP_I_M113_RACS"
 		,"CUP_I_M113_RACS_URB"
@@ -647,7 +647,7 @@ switch (_enemyFrequency) do {
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_B_LAV25_HQ_USMC"
-		//Heavily Armed APCs or AA  2 sets 
+		//Heavily Armed APCs or AA  2 sets
 		,"CUP_B_AAV_USMC"  //1
 		,"CUP_B_LAV25_USMC"
 		,"CUP_B_LAV25M240_USMC"
@@ -799,7 +799,7 @@ a3e_arr_recon_I_InfantryTypes = [
 // Random array. A roadblock has a manned vehicle. This array contains possible manned vehicles (can be of any kind, like cars, armored and statics).
 a3e_arr_Escape_RoadBlock_MannedVehicleTypes = [
     "CUP_B_HMMWV_Avenger_USMC"
-	,"CUP_B_M1151_Deploy_USMC"   
+	,"CUP_B_M1151_Deploy_USMC"
 	,"CUP_B_M1151_Mk19_USMC"
 	,"CUP_B_M1165_GMV_USMC"
 	,"CUP_B_M1167_USMC"
@@ -830,7 +830,7 @@ a3e_arr_Escape_MotorizedSearchGroup_vehicleClasses = [
 
 
 
-// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random 
+// A communication center is guarded by vehicles depending on variable _enemyFrequency. 1 = a random light armor. 2 = a random heavy armor. 3 = a random
 // light *and* a random heavy armor.
 
 // Random array. Light armored vehicles guarding the communication centers.
