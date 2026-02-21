@@ -7,8 +7,35 @@ dotenv: ['.env'] # Ensure you have an .env file with LOCAL_OUT_PATH mapped to yo
 vars:
   OUT_PATH: './out'
   ARCHIVE_FILE: arma3missions
+  MAPS: ['Altis', 'Tanoa', 'Takistan', 'Sara']
+  FACTIONS: ['CUP_RU_vs_BAF', 'CUP_USMC_vs_SLA']
 
 tasks:
+  build-maps:
+    cmds:
+      # - task: clean
+      # - task: ensure-out-dir
+      - for:
+          matrix:
+            MAP:
+              ref: .MAPS
+            FACTION:
+              ref: .FACTIONS
+        task: build-map
+        vars:
+          MAP: '{{.ITEM.MAP}}'
+          FACTION: '{{.ITEM.FACTION}}'
+        # cmd:
+        #   echo "co10_Escape_{{.ITEM.FACTION}}.{{.ITEM.MAP}}"
+  ensure-out-dir:
+    cmds:
+      - mkdir -p '{{.OUT_PATH}}'
+  build-map:
+    cmds:
+      - echo "co10_Escape_{{.FACTION}}.{{.MAP}}"
+      # - cp -r co10_Escape_{{.FACTION}}.{{.MAP}}/ "{{.OUT_PATH}}/"
+      # - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
+
   local:
     cmds:
       - task: altis
