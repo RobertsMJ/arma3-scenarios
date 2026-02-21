@@ -8,7 +8,7 @@ vars:
   OUT_PATH: './out'
   ARCHIVE_FILE: arma3missions
   MAPS: ['Altis', 'Tanoa', 'Takistan', 'Sara']
-  FACTIONS: ['CUP_RU_vs_BAF', 'CUP_USMC_vs_SLA']
+  FACTIONS: ['CUP_RU_vs_BAF', 'CUP_USMC_vs_SLA', 'CUP_RU_vs_USMC_and_RACS']
 
 tasks:
   build:
