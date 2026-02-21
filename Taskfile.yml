@@ -31,24 +31,18 @@ tasks:
           MAP: '{{.ITEM.MAP}}'
           FACTION: '{{.ITEM.FACTION}}'
           OUT_PATH: '{{$.OUT_PATH}}'
-        # cmd:
-        #   echo "co10_Escape_{{.ITEM.FACTION}}.{{.ITEM.MAP}}"
   ensure-out-dir:
     cmds:
       - mkdir -p '{{.OUT_PATH}}'
   build-map:
     silent: true
+    dotenv: ['config/{{.FACTION}}.env']
     cmds:
       - echo "Building co10_Escape_{{.FACTION}}.{{.MAP}}"
       - cp -r maps/{{.MAP}}/ "{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}"
-      - |
-        FACTION="{{.FACTION}}" \
-        envsubst < maps/{{.MAP}}/mission.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
       - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
-      - |
-        MAP="{{.MAP}}" \
-        FACTION="{{.FACTION}}" \
-        envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
+      - envsubst < templates/missions/{{.MAP}}.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
+      - envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
       - cp 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units/UnitClasses.sqf'
   local:
     cmds:

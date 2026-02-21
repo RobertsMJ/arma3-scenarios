@@ -455,7 +455,7 @@ class Mission
 		class Item42
 		{
 			dataType="Group";
-			side="East";
+			side="$PLAYERSIDE";
 			class Entities
 			{
 				items=10;
@@ -467,7 +467,7 @@ class Mission
 						position[]={12944.353,28.558819,18904.459};
 						angles[]={6.0973544,6.1442924,0.033321146};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=6;
 					class Attributes
 					{
@@ -479,7 +479,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=43;
-					type="CUP_O_RU_Soldier_SL_EMR";
+					type="$PLAYERUNIT_1";
 				};
 				class Item1
 				{
@@ -489,7 +489,7 @@ class Mission
 						position[]={12942.47,28.159378,18902.668};
 						angles[]={6.0973544,0.062423099,0.033321146};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -500,7 +500,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=44;
-					type="CUP_O_RU_Soldier_HAT_EMR";
+					type="$PLAYERUNIT_2";
 				};
 				class Item2
 				{
@@ -510,7 +510,7 @@ class Mission
 						position[]={12941.763,28.614311,18905.213};
 						angles[]={6.0973544,0.062423099,0.033321146};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -521,7 +521,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=45;
-					type="CUP_O_RU_Soldier_AA_EMR";
+					type="$PLAYERUNIT_3";
 				};
 				class Item3
 				{
@@ -531,7 +531,7 @@ class Mission
 						position[]={12941.676,28.354265,18903.846};
 						angles[]={6.0973544,0.062423099,0.033321146};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -542,7 +542,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=46;
-					type="CUP_O_RU_Engineer_EMR";
+					type="$PLAYERUNIT_4";
 				};
 				class Item4
 				{
@@ -552,7 +552,7 @@ class Mission
 						position[]={12945.07,28.114317,18901.996};
 						angles[]={6.0973544,0.062423099,6.2405448};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -563,7 +563,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=47;
-					type="CUP_O_RU_Soldier_GL_EMR";
+					type="$PLAYERUNIT_5";
 				};
 				class Item5
 				{
@@ -573,7 +573,7 @@ class Mission
 						position[]={12946.404,28.155855,18902.52};
 						angles[]={6.0973544,0.062423099,6.2405448};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -584,7 +584,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=48;
-					type="CUP_O_RU_Soldier_MG_EMR";
+					type="$PLAYERUNIT_6";
 				};
 				class Item6
 				{
@@ -594,7 +594,7 @@ class Mission
 						position[]={12943.665,28.082193,18902.045};
 						angles[]={6.0973544,0.062423099,0.033321146};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -605,7 +605,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=49;
-					type="CUP_O_RU_Soldier_AT_EMR";
+					type="$PLAYERUNIT_7";
 				};
 				class Item7
 				{
@@ -615,7 +615,7 @@ class Mission
 						position[]={12947.574,28.22439,18903.15};
 						angles[]={6.0973544,0.062423099,6.2405448};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -626,7 +626,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=50;
-					type="CUP_O_RU_Soldier_EMR";
+					type="$PLAYERUNIT_8";
 				};
 				class Item8
 				{
@@ -636,7 +636,7 @@ class Mission
 						position[]={12948.394,28.399374,18904.246};
 						angles[]={6.0577507,0.062423099,6.2818937};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -647,7 +647,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=51;
-					type="CUP_O_RU_Soldier_Marksman_EMR";
+					type="$PLAYERUNIT_9";
 				};
 				class Item9
 				{
@@ -657,7 +657,7 @@ class Mission
 						position[]={12949.015,28.647558,18905.332};
 						angles[]={6.0577507,0.062423099,6.2818937};
 					};
-					side="East";
+					side="$PLAYERSIDE";
 					flags=4;
 					class Attributes
 					{
@@ -668,7 +668,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=52;
-					type="CUP_O_RU_Medic_EMR";
+					type="$PLAYERUNIT_10";
 				};
 			};
 			class Attributes
@@ -722,51 +722,5 @@ class Mission
 			id=56;
 			type="Logic";
 		};
-	};
-};
-class OutroLoose
-{
-	class Intel
-	{
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=12;
-		minute=0;
-		startFogBase=0.001;
-		forecastFogBase=0.001;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
-	};
-};
-class OutroWin
-{
-	class Intel
-	{
-		timeOfChanges=1800.0002;
-		startWeather=0.30000001;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0.30000001;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		month=7;
-		day=6;
-		hour=12;
-		minute=0;
-		startFogBase=0.001;
-		forecastFogBase=0.001;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
 	};
 };

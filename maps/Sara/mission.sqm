@@ -87,7 +87,7 @@ class Mission
 		class Item0
 		{
 			dataType="Group";
-			side="WEST";
+			side="$PLAYERSIDE";
 			class Entities
 			{
 				items=10;
@@ -98,7 +98,7 @@ class Mission
 					{
 						position[]={2526.323,13.906439,2791.9841};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=7;
 					class Attributes
 					{
@@ -108,7 +108,7 @@ class Mission
 						isPlayer=1;
 					};
 					id=1;
-					type="CUP_B_USMC_Soldier_SL";
+					type="$PLAYERUNIT_1";
 				};
 				class Item1
 				{
@@ -117,7 +117,7 @@ class Mission
 					{
 						position[]={2529.001,13.906439,2786.6279};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -127,7 +127,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=2;
-					type="CUP_B_USMC_Soldier_HAT";
+					type="$PLAYERUNIT_2";
 				};
 				class Item2
 				{
@@ -136,7 +136,7 @@ class Mission
 					{
 						position[]={2532.915,13.906439,2782.0959};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -146,7 +146,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=3;
-					type="CUP_B_USMC_Soldier_AA";
+					type="$PLAYERUNIT_3";
 				};
 				class Item3
 				{
@@ -155,7 +155,7 @@ class Mission
 					{
 						position[]={2536.623,13.906439,2777.667};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -165,7 +165,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=4;
-					type="CUP_B_USMC_Engineer";
+					type="$PLAYERUNIT_4";
 				};
 				class Item4
 				{
@@ -174,7 +174,7 @@ class Mission
 					{
 						position[]={2540.4341,13.906439,2771.592};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -184,7 +184,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=5;
-					type="CUP_B_USMC_Soldier_GL";
+					type="$PLAYERUNIT_5";
 				};
 				class Item5
 				{
@@ -193,7 +193,7 @@ class Mission
 					{
 						position[]={2543.4199,13.906439,2766.75};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -203,7 +203,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=6;
-					type="CUP_B_USMC_Soldier_MG";
+					type="$PLAYERUNIT_6";
 				};
 				class Item6
 				{
@@ -212,7 +212,7 @@ class Mission
 					{
 						position[]={2548.9819,13.906439,2760.8792};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -222,7 +222,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=7;
-					type="CUP_B_USMC_Soldier_AT";
+					type="$PLAYERUNIT_7";
 				};
 				class Item7
 				{
@@ -231,7 +231,7 @@ class Mission
 					{
 						position[]={2553.2051,13.906439,2754.906};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -241,7 +241,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=8;
-					type="CUP_B_USMC_Soldier";
+					type="$PLAYERUNIT_8";
 				};
 				class Item8
 				{
@@ -250,7 +250,7 @@ class Mission
 					{
 						position[]={2556.707,13.906439,2747.9031};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -260,7 +260,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=9;
-					type="CUP_B_USMC_Soldier_Marksman";
+					type="$PLAYERUNIT_9";
 				};
 				class Item9
 				{
@@ -269,7 +269,7 @@ class Mission
 					{
 						position[]={2560.6201,13.906439,2739.7671};
 					};
-					side="WEST";
+					side="$PLAYERSIDE";
 					flags=5;
 					class Attributes
 					{
@@ -278,7 +278,7 @@ class Mission
 						isPlayable=1;
 					};
 					id=10;
-					type="CUP_B_USMC_Medic";
+					type="$PLAYERUNIT_10";
 				};
 			};
 			class Attributes
