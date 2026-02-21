@@ -13,7 +13,8 @@ vars:
 tasks:
   build:
     silent: true
-    task: build-maps
+    cmds:
+      - task: build-maps
   build-maps:
     silent: true
     cmds:
