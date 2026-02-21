@@ -1,8 +1,8 @@
 #define VERSION "1.10"
 #define MISSIONNAME "co10 Escape"
-#define MISSIONNAMEFULL "co10 Escape Takistan CUP RU vs BAF 1.10"
-#define MOD "CUP RU vs BAF"
-#define ISLAND "Takistan"
+#define MISSIONNAMEFULL "co10 Escape $MAP $FACTION (Chip's Version)"
+#define MOD "$FACTION"
+#define ISLAND "$MAP"
 #define RELEASE "Chip"
 
 //--- [Controls Style Preprocessors]

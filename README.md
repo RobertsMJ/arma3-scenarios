@@ -3,12 +3,25 @@
 Modified Arma 3 scenarios, primarily the excellent co10 escapes.
 
 # Environment variables
+
 Running `task local` requires a path to your multiplayer missions directory to automatically move compiled missions into. Set this in a `.env` file at the root of this repository and define a `LOCAL_OUT_PATH` variable.
 
 Example for a WSL setup:
+
 ```bash
 LOCAL_OUT_PATH=/mnt/c/Users/YOUR_USER/Documents/Arma 3 - Other Profiles/YOUR_ARMA_NAME/mpmissions
 ```
+
+# File Templating
+
+To facilitate building for multiple factions across each map, the following files must be templated:
+
+- defines.hpp
+- mission.sqm
+
+The environment variable substitutions are provided by the build-map task using the `FACTION` and `MAP` environment variables, i.e.
+`FACTION='CUP_RU_vs_BAF' MAP='Sara' task build-map`
+Additional environment variables are sourced from the `.env` files defined in the `config` directory by the build task based on the provided faction.
 
 # Credits
 
