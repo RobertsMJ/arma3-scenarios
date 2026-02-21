@@ -37,6 +37,9 @@ tasks:
   build-map:
     silent: true
     dotenv: ['config/{{.FACTION}}.env']
+    env:
+      MAP: '{{.MAP}}'
+      FACTION: '{{.FACTION}}'
     cmds:
       - echo "Building co10_Escape_{{.FACTION}}.{{.MAP}}"
       - cp -r maps/{{.MAP}}/ "{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}"

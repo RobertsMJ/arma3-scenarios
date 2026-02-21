@@ -675,13 +675,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="COLONEL";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p1";
 						isPlayer=1;
 						isPlayable=1;
@@ -708,13 +702,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="MAJOR";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p2";
 						isPlayable=1;
 					};
@@ -739,13 +727,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p3";
 						isPlayable=1;
 					};
@@ -770,13 +752,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p4";
 						isPlayable=1;
 					};
@@ -801,13 +777,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p5";
 						isPlayable=1;
 					};
@@ -832,13 +802,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="SERGEANT";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p6";
 						isPlayable=1;
 					};
@@ -863,13 +827,7 @@ class Mission
 					{
 						skill=0.59000003;
 						rank="SERGEANT";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p7";
 						isPlayable=1;
 					};
@@ -894,13 +852,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CORPORAL";
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p8";
 						isPlayable=1;
 					};
@@ -924,13 +876,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p9";
 						isPlayable=1;
 					};
@@ -954,13 +900,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setCaptive true;
-						if (local this) then {
-							{
-								this unlinkItem _x;
-							} forEach ['ItemMap', 'itemGPS', 'B_UavTerminal'];
-						};
-						";
+						init="this setCaptive true; if(local this) then {{this unlinkItem _x;} forEach ['ItemMap','itemGPS','B_UavTerminal'];};";
 						name="p10";
 						isPlayable=1;
 					};
