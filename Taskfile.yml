@@ -51,3 +51,5 @@ tasks:
     cmds:
       - cp -r co10_Escape_CUP_USMC_vs_SLA0.Sara/ "{{.OUT_PATH}}/"
       - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_USMC_vs_SLA0.Sara'
+      - cp -r co10_Escape_CUP_RU_vs_USMC_and_RACS28.Sara/ "{{.OUT_PATH}}/"
+      - cp -r common/* '{{.OUT_PATH}}/co10_Escape_CUP_RU_vs_USMC_and_RACS28.Sara'
