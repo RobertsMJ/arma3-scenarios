@@ -14,10 +14,6 @@ tasks:
   build:
     silent: true
     cmds:
-      - task: build-maps
-  build-maps:
-    silent: true
-    cmds:
       - task: clean
       - task: ensure-out-dir
       - for:
@@ -49,9 +45,15 @@ tasks:
       - cp -r 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units'
   local:
     cmds:
-      - task: build-maps
+      - task: build
         vars:
           OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
   clean:
     cmds:
       - rm -rf "{{.OUT_PATH}}"
+  ci:
+    silent: true
+    cmds:
+      - task: build
+      - tar -czvf '{{.ARCHIVE_FILE}}.tar.gz' -C '{{.OUT_PATH}}' .
+      - mv '{{.ARCHIVE_FILE}}.tar.gz' out/

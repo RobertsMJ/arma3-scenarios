@@ -19,7 +19,7 @@ jobs:
       with:
         task-version: 3.48.0
     - name: Build
-      run: task build
+      run: task ci
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
