@@ -46,7 +46,7 @@ tasks:
       - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
       - envsubst < templates/missions/{{.MAP}}.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
       - envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
-      - cp 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units/UnitClasses.sqf'
+      - cp -r 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units'
   local:
     cmds:
       - task: build-maps
