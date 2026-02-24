@@ -38,7 +38,7 @@ tasks:
     cmds:
       - mkdir -p '{{.OUT_PATH}}'
   build-map:
-    silent: false
+    silent: true
     dotenv: ['config/{{.FACTION}}.env']
     env:
       MAP: '{{.MAP}}'
