@@ -15,6 +15,8 @@ tasks:
     silent: true
     cmds:
       - task: clean
+        vars:
+          OUT_PATH: '{{$.OUT_PATH}}'
       - task: ensure-out-dir
       - task: radio
         vars:
@@ -52,7 +54,8 @@ tasks:
       - envsubst < templates/description.ext > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/description.ext'
       - envsubst < templates/missions/{{.MAP}}.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
       - envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
-      - cp 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units/UnitClasses.sqf'
+      - mkdir -p '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units'
+      - cp -r 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units/UnitClasses.sqf'
   local:
     cmds:
       - task: build
