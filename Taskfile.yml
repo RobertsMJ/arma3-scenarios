@@ -15,7 +15,11 @@ tasks:
     silent: true
     cmds:
       - task: clean
+        vars:
+          OUT_PATH: '{{$.OUT_PATH}}'
       - task: ensure-out-dir
+        vars:
+          OUT_PATH: '{{$.OUT_PATH}}'
       - for:
           matrix:
             MAP:
@@ -27,6 +31,9 @@ tasks:
           MAP: '{{.ITEM.MAP}}'
           FACTION: '{{.ITEM.FACTION}}'
           OUT_PATH: '{{$.OUT_PATH}}'
+  clean:
+    cmds:
+      - rm -rf "{{.OUT_PATH}}"
   ensure-out-dir:
     cmds:
       - mkdir -p '{{.OUT_PATH}}'
@@ -42,15 +49,13 @@ tasks:
       - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
       - envsubst < templates/missions/{{.MAP}}.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
       - envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
-      - cp -r 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units'
+      - mkdir -p '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units'
+      - cp -r 'factions/{{.FACTION}}/UnitClasses.sqf' '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units/UnitClasses.sqf'
   local:
     cmds:
       - task: build
         vars:
           OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
-  clean:
-    cmds:
-      - rm -rf "{{.OUT_PATH}}"
   ci:
     silent: true
     cmds:

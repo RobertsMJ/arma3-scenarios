@@ -144,7 +144,7 @@ class Params
 		title="Extraction Points";
 		values[]={0, 1, 2};
 		texts[]={"Random", "Close", "Far"};
-		default = 0;
+		default = 2;
 	};
 	class Param_Waffelbox
 	{
@@ -172,7 +172,7 @@ class Params
 		title="Send statistics at mission end";
 		values[]={0,1};
 		texts[]={"No", "Yes"};
-		default = 1;
+		default = 0;
 	};
 	class Param_Spacer5
     {
