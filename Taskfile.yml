@@ -18,6 +18,8 @@ tasks:
         vars:
           OUT_PATH: '{{$.OUT_PATH}}'
       - task: ensure-out-dir
+        vars:
+          OUT_PATH: '{{$.OUT_PATH}}'
       - task: radio
         vars:
           OUT_PATH: '{{$.OUT_PATH}}'
