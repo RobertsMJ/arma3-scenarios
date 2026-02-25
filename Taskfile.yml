@@ -20,6 +20,9 @@ tasks:
       - task: ensure-out-dir
         vars:
           OUT_PATH: '{{$.OUT_PATH}}'
+      - task: radio
+        vars:
+          OUT_PATH: '{{$.OUT_PATH}}'
       - for:
           matrix:
             MAP:
@@ -31,22 +34,26 @@ tasks:
           MAP: '{{.ITEM.MAP}}'
           FACTION: '{{.ITEM.FACTION}}'
           OUT_PATH: '{{$.OUT_PATH}}'
-  clean:
-    cmds:
-      - rm -rf "{{.OUT_PATH}}"
+      - rm "{{$.OUT_PATH}}/radio_stations.txt"
   ensure-out-dir:
+    silent: true
     cmds:
       - mkdir -p '{{.OUT_PATH}}'
   build-map:
     silent: true
     dotenv: ['config/{{.FACTION}}.env']
+    vars:
+      RADIO_STATIONS:
+        sh: cat "{{.OUT_PATH}}/radio_stations.txt"
     env:
       MAP: '{{.MAP}}'
       FACTION: '{{.FACTION}}'
+      RADIO_STATIONS: '{{.RADIO_STATIONS}}'
     cmds:
       - echo "Building co10_Escape_{{.FACTION}}.{{.MAP}}"
       - cp -r maps/{{.MAP}}/ "{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}"
       - cp -r common/* '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}'
+      - envsubst < templates/description.ext > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/description.ext'
       - envsubst < templates/missions/{{.MAP}}.sqm > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/mission.sqm'
       - envsubst < templates/include/defines.hpp > '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/include/defines.hpp'
       - mkdir -p '{{.OUT_PATH}}/co10_Escape_{{.FACTION}}.{{.MAP}}/Units'
@@ -56,9 +63,40 @@ tasks:
       - task: build
         vars:
           OUT_PATH: '{{$.LOCAL_OUT_PATH}}'
+  clean:
+    silent: true
+    cmds:
+      - rm -rf "{{.OUT_PATH}}"
   ci:
     silent: true
     cmds:
       - task: build
       - tar -czvf '{{.ARCHIVE_FILE}}.tar.gz' -C '{{.OUT_PATH}}' .
       - mv '{{.ARCHIVE_FILE}}.tar.gz' out/
+  
+  radio:
+    silent: true
+    vars:
+      LOCAL_LIST:
+        sh: echo {{$.RADIO_STATION_NAMES}}
+    cmds:
+    - task: ensure-out-dir
+    - rm -f {{.OUT_PATH}}/radio_stations.txt
+    - for: {var: LOCAL_LIST}
+      task: add-radio-station
+      vars:
+        NAME: '{{.ITEM}}'
+        OUT_PATH: '{{$.OUT_PATH}}'
+
+  add-radio-station:
+    silent: true
+    internal: true
+    vars:
+      STATION_URL:
+        sh: echo ${{.NAME}}
+      STATION_FILE: "{{.OUT_PATH}}/radio_stations.txt"
+    cmds:
+      - echo "  class my_station_{{.NAME}} {" >> "{{.STATION_FILE}}"
+      - echo "    name = \"{{.NAME}}\"" >> "{{.STATION_FILE}}"
+      - echo "    url = \"{{.STATION_URL}}\"" >> "{{.STATION_FILE}}"
+      - echo "  };" >> "{{.STATION_FILE}}"
