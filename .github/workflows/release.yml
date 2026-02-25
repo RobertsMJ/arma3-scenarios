@@ -24,7 +24,7 @@ jobs:
         RADIO_STATION_NAMES: ${{ secrets.RADIO_STATION_NAMES }}
         B1047: ${{ secrets.B1047 }}
         KUOW: ${{ secrets.KUOW }}
-        OPENTTD: ${{ secrets.OPENTTD }}
+        OpenTTD: ${{ secrets.OPENTTD }}
     - name: Release
       uses: softprops/action-gh-release@v2
       with:
