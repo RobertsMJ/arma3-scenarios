@@ -111,7 +111,6 @@ while {true} do {
         _spawnPos = [units _referenceGroup, _minDistance, _maxSpawnDistance] call a3e_fnc_RandomSpawnPos;
         _skill = _minSkill + random (_maxSkill - _minSkill);
 
-        // TODO:MJR = ORIGINAL
         _faction = _factionsArray select (floor (random (count _factionsArray)));
         if(_faction == A3E_VAR_Side_Opfor) then {
             _possibleInfantryTypes = a3e_arr_Escape_InfantryTypes;
@@ -121,14 +120,15 @@ while {true} do {
         };
 
         // Create group
-        _unitsInGroup = _minUnitsInGroup + floor (random (_maxUnitsInGroup - _minUnitsInGroup));
+        //_unitsInGroup = _minUnitsInGroup + floor (random (_maxUnitsInGroup - _minUnitsInGroup));
+		_unitsInGroup = [] call a3e_fnc_getDynamicSquadSize;
         _group = createGroup _faction;
 
         for [{_i = 0}, {_i < _unitsInGroup}, {_i = _i + 1}] do {
             _infantryType = _possibleInfantryTypes select floor (random count _possibleInfantryTypes);
             //_infantryType createUnit [_spawnPos, _group,"", _skill, "PRIVATE"];
 			_unit = _group createUnit [_infantryType, _spawnPos, [], 0, "FORM"];
-            [_unit] joinSilent _group;
+            _unit joinSilent _group;
         };
 
         {
@@ -271,6 +271,15 @@ while {true} do {
 				terminate _script;
 			};
 		};
+
+		private _grouplist = missionNamespace getvariable ["A3E_StatusOfPatrols",[]];
+		private _grp = _x;
+		{
+			if(_grp==_x#0) exitwith {
+				_x set [3,true]; //set despawn flag, so searchleader will not miss this group
+			};
+		} foreach _grouplist;
+
         deleteGroup _x;
     } foreach _groupsToDelete;
 

@@ -27,6 +27,12 @@ EscapeVersion = VERSION;
 EscapeRelease = RELEASE;
 cba_settings_hasSettingsFile = 1;
 
+class Extended_PreInit_EventHandlers {
+    class a3e {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 Respawn = "INSTANT";
 RespawnDelay = 60;
@@ -34,6 +40,7 @@ respawnButton = 0;
 
 disabledAI = 1;
 enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
 
 corpseLimit = 30;
 corpseRemovalMinTime = 600;
@@ -99,6 +106,7 @@ class CfgRemoteExec
                mode = 2;
                // Ability to send jip messages: 0-disabled, 1-enabled (default)
                jip = 1;
+			   class a3e_fnc_initPlayer { allowedTargets=2; jip=0; };
        };
        // List of script commands allowed to be sent from client via remoteExec
        class Commands
@@ -121,9 +129,7 @@ class RscTitles {
 				class Rsc_MouseArea {
 					idc = 170001;
 					style = ST_MULTI;
-
 					type = CT_STATIC;
-
 					shadow = 1;
 					colorShadow[] = {0,0,0,0.5};
 					font = "PuristaMedium";

@@ -24,6 +24,9 @@ _fnc_createObject = {
     _object;
 };
 
+//Fix rotation
+_rotation = _rotation + 180;
+
 private _obj = objNull;
 _obj = ["Land_SandbagBarricade_01_half_F",_center,[-10.3904,-12.7241,0],_rotation,358.693] call _fnc_createObject;
 _obj = ["Land_SandbagBarricade_01_half_F",_center,[-14.2667,-11.3242,-0.0999999],_rotation,89.804] call _fnc_createObject;
@@ -44,6 +47,7 @@ _obj = ["Land_DataTerminal_01_F",_center,[3.10437,7.92236,4.97927],_rotation,179
 _obj setvariable ["A3E_isTerminal",true,true];
 _obj allowDamage false;
 [_obj,"green","green","green"] call BIS_fnc_DataTerminalColor;
+
 _obj = ["Land_SandbagBarricade_01_half_F",_center,[13.0726,-12.3271,-0.0999999],_rotation,359.81] call _fnc_createObject;
 _obj = ["Land_SandbagBarricade_01_half_F",_center,[14.4888,-10.8018,-0.0999999],_rotation,268.701] call _fnc_createObject;
 _obj = ["Land_Bunker_01_blocks_1_F",_center,[14.3628,-8.76367,0],_rotation,270.036] call _fnc_createObject;

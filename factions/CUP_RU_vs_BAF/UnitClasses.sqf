@@ -92,10 +92,10 @@ a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 	,"C_Truck_02_fuel_F"
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -512,10 +512,10 @@ a3e_arr_Escape_EnemyCivilianCarTypes = [
 	,"C_Truck_02_box_F"
 	,"C_Truck_02_transport_F"
 	,"C_Truck_02_covered_F"];
-	if(Param_UseDLCApex==1) then {
+	if(A3E_Param_UseDLCApex==1) then {
 		a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 	};
-	if(Param_UseDLCLaws==1) then {
+	if(A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -660,7 +660,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["CUP_B_USMC_MOLLE_WDL"];
 // Index 3: Maximum amount.
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["Rangefinder", 10, 1, 2];
@@ -700,7 +700,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_optic_Kobra", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PechenegScope", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_1", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_PSO_3", 20, 1, 3];
-if(Param_NoNightvision==0) then {
+if(A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PAS_13c1", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_10", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_CWS", 10, 1, 3];
@@ -805,6 +805,17 @@ a3e_arr_Bipods = [
 	,"bipod_03_F_blk"
 	,"bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
 
 //////////////////////////////////////////////////////////////////
 // RunExtraction.sqf
@@ -822,6 +833,32 @@ a3e_arr_extraction_chopper_escort = [
 	,"CUP_O_Mi24_V_RU"
 	,"CUP_O_Ka50_RU"
 	,"CUP_O_Ka50_AA_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_PBX_RU"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_ZUBR_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Kamaz_RU"	//10+
+	,"CUP_O_BTR80_DESERT_RU"	//10+
+	,"CUP_O_BTR80A_DESERT_RU"	//10+
+	,"CUP_O_MTLB_pk_WDL_RU"];	//9
+a3e_arr_extraction_car_escort = [
+	"CUP_O_BTR80_DESERT_RU"
+	,"CUP_O_BTR80A_DESERT_RU"
+	,"CUP_O_T72_RU"
+	,"CUP_O_T90_RU"];
 
 //////////////////////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -846,13 +883,13 @@ a3e_arr_searchChopper_pilot = [
 a3e_arr_searchChopper_crew = [
 	"CUP_I_PMC_Pilot"];
 
-if(Param_SearchChopper==0) then {
+if(A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if(Param_SearchChopper==1) then {
+if(A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if(Param_SearchChopper==2) then {
+if(A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

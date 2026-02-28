@@ -19,6 +19,7 @@ _surprises = [];
 
 _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
 _timeInSek = 5 * 60 + random (60 * 60);
+//_timeInSek = 10;
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _condition = {true};
 _surprise = ["DROPCHOPPER", _timeInSek, _condition, false, _surpriseArgs];
@@ -28,6 +29,7 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 
 _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
 _timeInSek = 5 * 60 + random (60 * 60);
+//_timeInSek = 15;
 _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
 _condition = {true};
 _surprise = ["DROPCHOPPER_I", _timeInSek, _condition, false, _surpriseArgs];
@@ -45,22 +47,27 @@ diag_log ("ESCAPE SURPRISE: " + str _surprise);
 
 //Search Drone
 
-_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 5 * 60 + random (30 * 60);
-_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-_surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-_surprises set [count _surprises, _surprise];
-diag_log ("ESCAPE SURPRISE: " + str _surprise);
+if(count(missionNamespace getvariable ["a3e_arr_searchdrone",[]])>0) then
+{
+	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+	_timeInSek = 5 * 60 + random (30 * 60);
+	_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+	_surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+	_surprises set [count _surprises, _surprise];
+	diag_log ("ESCAPE SURPRISE: " + str _surprise);
+};
 
 //Leaflet Drone
 
-_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-_timeInSek = 5 * 60 + random (30 * 60);
-_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-_surprise = ["LEAFLETDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-_surprises set [count _surprises, _surprise];
-diag_log ("ESCAPE SURPRISE: " + str _surprise);
-
+if(count(missionNamespace getvariable ["a3e_arr_leafletdrone",[]])>0 || isNil "a3e_arr_leafletdrone") then
+{
+	_surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+	_timeInSek = 5 * 60 + random (30 * 60);
+	_timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+	_surprise = ["LEAFLETDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+	_surprises set [count _surprises, _surprise];
+	diag_log ("ESCAPE SURPRISE: " + str _surprise);
+};
 
 // Motorized Search Group
 
@@ -146,12 +153,12 @@ while {true} do {
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
                         _soldierType = A3E_arr_recon_InfantryTypes select floor (random count A3E_arr_recon_InfantryTypes);
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
-                        [_soldier] joinSilent _dropGroup;
+                        _soldier joinSilent _dropGroup;
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
                         _soldier setRank "CAPTAIN";
                         _soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
-                        _dropUnits set [_i, _soldier];
+                        _dropUnits pushBack _soldier;
                     };
 
                     _dropPosition = [drn_searchAreaMarkerName] call drn_fnc_CL_GetRandomMarkerPos;
@@ -172,6 +179,7 @@ while {true} do {
                     // Create next drop chopper
                     _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
                     _timeInSek = random (45 * 60);
+					//_timeInSek = 15;
                     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
                     _condition = {true};
                     _surprise = ["DROPCHOPPER", _timeInSek, _condition, false, _surpriseArgs];
@@ -190,14 +198,14 @@ while {true} do {
                     _dropUnits = [];
 
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
-                        _soldierType = a3e_arr_Escape_InfantryTypes_Ind select floor (random count a3e_arr_Escape_InfantryTypes_Ind);
+                        _soldierType = a3e_arr_recon_I_InfantryTypes select floor (random count a3e_arr_recon_I_InfantryTypes);
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
-                        [_soldier] joinSilent _dropGroup;
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
+                        _soldier joinSilent _dropGroup;
                         _soldier setRank "CAPTAIN";
                         _soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
-                        _dropUnits set [_i, _soldier];
+                        _dropUnits pushBack _soldier;
                     };
 
                     _dropPosition = [drn_searchAreaMarkerName] call drn_fnc_CL_GetRandomMarkerPos;
@@ -218,6 +226,7 @@ while {true} do {
                     // Create next drop chopper
                     _surpriseArgs = [(_enemyFrequency + 2) + floor random (_enemyFrequency * 2)]; // [NoOfDropUnits]
                     _timeInSek = random (45 * 60);
+					//_timeInSek =  15;
                     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
                     _condition = {true};
                     _surprise = ["DROPCHOPPER_I", _timeInSek, _condition, false, _surpriseArgs];
@@ -240,10 +249,10 @@ while {true} do {
 
                     //"O_Pilot_F" createUnit [[0, 0, 30], _group, "", (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill)), "LIEUTNANT"];
                     //"O_Pilot_F" createUnit [[0, 0, 30], _group, "", (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill)), "LIEUTNANT"];
-                    _unit1 = _group createUnit [_crewtype, [0, 0, 30], [], 0, "FORM"];
-                    [_unit1] joinSilent _group;
-                    _unit2 = _group createUnit [_crewtype, [0, 0, 30], [], 0, "FORM"];
-                    [_unit2] joinSilent _group;
+                    _unit = _group createUnit [_crewtype, [0, 0, 30], [], 0, "FORM"];
+                    _unit joinSilent _group;
+                    _unit = _group createUnit [_crewtype, [0, 0, 30], [], 0, "FORM"];
+                    _unit joinSilent _group;
 
                     ((units _group) select 0) assignAsDriver _chopper;
                     ((units _group) select 0) moveInDriver _chopper;
@@ -268,33 +277,34 @@ while {true} do {
                 };
 
 
-				// if (_surpriseID == "SEARCHDRONE") then {
-                //     private ["_chopper", "_result"];
+				if (_surpriseID == "SEARCHDRONE") then {
+                    private ["_chopper", "_result"];
 
-				// 	_chopper = createVehicle [selectRandom a3e_arr_searchdrone, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
-				// 	createVehicleCrew _chopper;
+					_chopper = createVehicle [selectRandom a3e_arr_searchdrone, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
+					createVehicleCrew _chopper;
 
-				// 	_chopper lock false;
-				// 	_chopper setVehicleVarName "a3e_searchdrone";
-				// 	_chopper call compile format ["%1=_this;", "a3e_searchdrone"];
+					_chopper lock false;
+					_chopper setVehicleVarName "a3e_searchdrone";
+					_chopper call compile format ["%1=_this;", "a3e_searchdrone"];
 
 
-                //     //[_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), a3e_var_Escape_debugSearchChopper] execVM "Scripts\DRN\SearchChopper\SearchChopper.sqf";
-                //     [_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), A3E_Debug] spawn A3E_fnc_SearchDrone;
+                    //[_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), a3e_var_Escape_debugSearchChopper] execVM "Scripts\DRN\SearchChopper\SearchChopper.sqf";
+                    [_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), A3E_Debug] spawn A3E_fnc_SearchDrone;
 
-                //     // Create new russian search chopper
-                //     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-                //     _timeInSek = 30 * 60 + random (45 * 60);
-                //     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-                //     _surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-                //     _surprises set [count _surprises, _surprise];
-                //     diag_log ("ESCAPE SURPRISE: " + str _surprise);
-                // };
+                    // Create new russian search chopper
+                    _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+                    _timeInSek = 30 * 60 + random (45 * 60);
+                    _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+                    _surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+                    _surprises set [count _surprises, _surprise];
+                    diag_log ("ESCAPE SURPRISE: " + str _surprise);
+                };
 
 				if (_surpriseID == "LEAFLETDRONE") then {
-                    private ["_chopper", "_result", "_group","_helitype","_arr"];
+                    private ["_chopper", "_result", "_group","_helitype","_arr","_dronetype"];
 
-					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, "I_UAV_06_F", A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
+					_dronetype = missionnamespace getvariable ["a3e_arr_leafletdrone", ["I_UAV_06_F"]];
+					_arr = [(getMarkerPos "drn_russianSearchChopperStartPosMarker"), 0, selectRandom _dronetype, A3E_VAR_Side_Ind] call bis_fnc_spawnvehicle;
 					_chopper = _arr select 0;
 					_group = _arr select 2;
 					_chopper lock false;

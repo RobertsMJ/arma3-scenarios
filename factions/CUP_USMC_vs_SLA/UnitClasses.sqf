@@ -51,10 +51,10 @@ a3e_arr_PrisonBackpackWeapons pushback ["CUP_hgun_SA61", "CUP_20Rnd_B_765x17_Bal
 // random array. civilian vehicle classes for ambient traffic.
 a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses = [
 "CUP_C_UAZ_Unarmed_TK_CIV", "CUP_C_UAZ_Open_TK_CIV", "CUP_C_Ural_Civ_01", "CUP_C_Ural_Civ_02", "CUP_C_Ural_Civ_03", "CUP_C_Ural_Open_Civ_01", "CUP_C_Ural_Open_Civ_02", "CUP_C_Ural_Open_Civ_03", "CUP_C_Datsun", "CUP_C_Datsun_4seat", "CUP_C_Datsun_Plain", "CUP_C_Datsun_Covered", "CUP_C_Datsun_Tubeframe", "CUP_C_Octavia_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Skoda_Red_CIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_Green_CIV", "CUP_C_Golf4_red_Civ", "CUP_C_Golf4_random_Civ", "CUP_C_Golf4_random_Civ", "CUP_C_SUV_CIV", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F", "C_Truck_02_covered_F", "C_Offroad_01_repair_F", "C_Truck_02_fuel_F", "C_Truck_02_box_F", "C_Truck_02_transport_F"];
-if (Param_UseDLCApex==1) then {
+if (A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Offroad_02_unarmed_F";
 };
-if (Param_UseDLCLaws==1) then {
+if (A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_MilitaryTraffic_CivilianVehicleClasses pushback "C_Van_02_service_F";
@@ -145,10 +145,10 @@ a3e_arr_ComCenParkedVehicles = [
 // random array. Enemies sometimes use civilian vehicles in their unconventional search for players. The following car types may be used.
 a3e_arr_Escape_EnemyCivilianCarTypes = [
 "CUP_C_UAZ_Unarmed_TK_CIV", "CUP_C_UAZ_Open_TK_CIV", "CUP_C_Ural_Civ_01", "CUP_C_Ural_Civ_02", "CUP_C_Ural_Civ_03", "CUP_C_Ural_Open_Civ_01", "CUP_C_Ural_Open_Civ_02", "CUP_C_Ural_Open_Civ_03", "CUP_C_Datsun", "CUP_C_Datsun_4seat", "CUP_C_Datsun_Plain", "CUP_C_Datsun_Covered", "CUP_C_Datsun_Tubeframe", "CUP_C_Octavia_CIV", "CUP_C_Skoda_White_CIV", "CUP_C_Skoda_Red_CIV", "CUP_C_Skoda_Blue_CIV", "CUP_C_Skoda_Green_CIV", "CUP_C_Golf4_red_Civ", "CUP_C_Golf4_random_Civ", "CUP_C_Golf4_random_Civ", "CUP_C_SUV_CIV", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_Quadbike_01_F", "C_SUV_01_F", "C_Van_01_box_F", "C_Van_01_transport_F", "C_Van_01_fuel_F", "C_Truck_02_fuel_F", "C_Truck_02_box_F", "C_Truck_02_transport_F", "C_Truck_02_covered_F"];
-if (Param_UseDLCApex==1) then {
+if (A3E_Param_UseDLCApex==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Offroad_02_unarmed_F";
 };
-if (Param_UseDLCLaws==1) then {
+if (A3E_Param_UseDLCLaws==1) then {
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_medevac_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_vehicle_F";
 	a3e_arr_Escape_EnemyCivilianCarTypes pushback "C_Van_02_service_F";
@@ -269,7 +269,7 @@ a3e_arr_AmmoDepotVehicleBackpacks = ["CUP_B_AlicePack_Khaki"];
 // Index 3: Maximum amount.
 a3e_arr_AmmoDepotItems = [];
 a3e_arr_AmmoDepotItems pushback ["Laserdesignator", 10, 1, 2];
-if (Param_NoNightvision==0) then {
+if (A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["NVGoggles", 10, 1, 3];
 };
 a3e_arr_AmmoDepotItems pushback ["Rangefinder", 10, 1, 2];
@@ -300,7 +300,7 @@ a3e_arr_AmmoDepotItems pushback ["CUP_optic_SB_3_12x50_PMII", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_CompM4", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_Eotech533", 10, 1, 3];
 a3e_arr_AmmoDepotItems pushback ["CUP_optic_CompM2_Desert", 10, 1, 3];
-if (Param_NoNightvision==0) then {
+if (A3E_Param_NoNightvision==0) then {
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_AN_PVS_4", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_NSPU", 10, 1, 3];
 	a3e_arr_AmmoDepotItems pushback ["CUP_optic_GOSHAWK", 10, 1, 3];
@@ -364,6 +364,18 @@ a3e_arr_TWSScopes = [
 a3e_arr_Bipods = [
 "CUP_bipod_VLTOR_Modpod", "CUP_bipod_Harris_1A2_L", "bipod_01_F_snd", "bipod_01_F_blk", "bipod_01_F_mtp", "bipod_02_F_blk", "bipod_02_F_tan", "bipod_02_F_hex", "bipod_03_F_blk", "bipod_03_F_oli"];
 
+//////////////////////////////////////////////////////////////////
+// SelectExtractionZone.sqf
+// Which type of extractions are supported/preferred by this unitclasses version?
+// Only if supported by terrain, so if corresponding markers are placed
+// Basic fallback is always Heli extraction
+// Available types: a3e_arr_extractiontypes = ["air","land","sea"];
+//////////////////////////////////////////////////////////////////
+a3e_arr_extractiontypes = [
+	"air"
+	,"land"
+	,"sea"];
+
 // //// //// //// //// ////////////////////////////////////////////////
 // RunExtraction.sqf
 // Helicopters that come to pick you up
@@ -372,6 +384,32 @@ a3e_arr_extraction_chopper = [
 "CUP_B_MH60L_DAP_2x_USN", "CUP_B_MH60L_DAP_4x_USN", "CUP_B_MH60S_FFV_USMC", "CUP_B_UH60S_USN", "CUP_B_UH1Y_Gunship_Dynamic_USMC", "CUP_B_MV22_USMC_RAMPGUN", "CUP_B_MV22_USMC_RAMPGUN"];
 a3e_arr_extraction_chopper_escort = [
 "CUP_B_AH1Z_USMC"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionBoat.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_boat = [
+	"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_PBX_RU"];
+a3e_arr_extraction_boat_escort = [
+	"O_Boat_Armed_01_hmg_F"
+	,"CUP_O_ZUBR_RU"];
+
+//////////////////////////////////////////////////////////////////
+// RunExtractionLand.sqf
+// Boats that come to pick you up
+//////////////////////////////////////////////////////////////////
+a3e_arr_extraction_car = [
+	"CUP_O_Kamaz_RU"	//10+
+	,"CUP_O_BTR80_DESERT_RU"	//10+
+	,"CUP_O_BTR80A_DESERT_RU"	//10+
+	,"CUP_O_MTLB_pk_WDL_RU"];	//9
+a3e_arr_extraction_car_escort = [
+	"CUP_O_BTR80_DESERT_RU"
+	,"CUP_O_BTR80A_DESERT_RU"
+	,"CUP_O_T72_RU"
+	,"CUP_O_T90_RU"];
 
 // //// //// //// //// ////////////////////////////////////////////////
 // EscapeSurprises.sqf and CreateSearchDrone.sqf
@@ -391,13 +429,13 @@ a3e_arr_searchChopperHard = [
 "CUP_I_UH60L_FFV_RACS", "CUP_I_AH6J_Escort19_RACS", "CUP_I_AH6J_Escort_RACS", "CUP_I_AH6J_MP_RACS"];
 
 a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
-if (Param_SearchChopper==0) then {
+if (A3E_Param_SearchChopper==0) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy + a3e_arr_searchChopperHard;
 };
-if (Param_SearchChopper==1) then {
+if (A3E_Param_SearchChopper==1) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperEasy;
 };
-if (Param_SearchChopper==2) then {
+if (A3E_Param_SearchChopper==2) then {
 	a3e_arr_searchChopper = a3e_arr_searchChopperHard;
 };
 

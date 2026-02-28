@@ -4,6 +4,7 @@ _unit setvariable ["ATR_Ragdolling",true];
 private _group = creategroup (side _unit);
 [_unit, true] remoteExec ["hideObject", 0, false];
 private _dummy = _group createUnit [typeof _unit, [0,0,0], [], 0, "FORM"];
+_dummy joinSilent _group;
 if(!isNull _dummy) then {
 	_dummy setposASL getPosASL _unit;
 	_dummy setdir getdir _unit;
@@ -15,7 +16,7 @@ if(!isNull _dummy) then {
 	if(_unit==player) then {
 		_dummy switchCamera "Internal";
 	};
-	
+
 	for[{_i=0},{_i<50},{_i=_i+1}] do {
 		if(((_dummy selectionPosition "Neck") select 2)<0.2 && _i>25) then {
 			_i = 50;
@@ -25,7 +26,7 @@ if(!isNull _dummy) then {
 	};
 
 	[_unit, false] remoteExec ["hideObject", 0, false];
-	
+
 	[_unit, "AinjPpneMstpSnonWrflDnon"] remoteExec ["ATR_fnc_unconsciousAnimation", 0, false];
 
 	if((getpos _unit select 2) > 2) then {
