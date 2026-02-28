@@ -11,7 +11,7 @@ switch (_side) do {
 if(!(isNull _static)) then {
 	_infantryType = _possibleInfantryTypes select floor (random count _possibleInfantryTypes);
 	_unit = _group createUnit [_infantryType, getpos _static, [], 0, "FORM"];
-	[_unit] joinSilent _group;
+	_unit joinSilent _group;
 	_unit assignAsGunner _static;
 	_unit moveInGunner _static;
 } else {

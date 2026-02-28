@@ -191,7 +191,9 @@ private ["_weapons", "_weaponMagazines", "_box", "_weaponCount"];
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -243,7 +245,9 @@ private ["_weapons", "_weaponMagazines", "_box", "_weaponCount"];
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -273,7 +277,7 @@ private ["_weapons", "_weaponMagazines", "_box", "_weaponCount"];
 } foreach _weaponMagazines;
 };
 
-if((Param_Waffelbox)==1) then {
+if((A3E_Param_Waffelbox)==1) then {
   _box = createVehicle [a3e_additional_weapon_box_1, [(_center select 0) + 0, (_center select 1) + 3, 0], [], 0, "CAN_COLLIDE"];
   _box call A3E_fnc_initArsenal;
   _box = createVehicle [a3e_additional_weapon_box_2, [(_center select 0) + 3, (_center select 1) + 3, 0], [], 0, "CAN_COLLIDE"];
@@ -298,7 +302,9 @@ if((Param_Waffelbox)==1) then {
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];
@@ -349,7 +355,9 @@ if((Param_Waffelbox)==1) then {
         
         if (random 100 <= _probabilityOfPrecence) then {
             _weaponCount = floor (_minCount + random (_maxCount - _minCount));
-            _weapons pushBack [_weaponClassName, _weaponCount];
+             if(typeName _weaponClassName == "STRING") then {
+				_weapons pushBack [_weaponClassName, _weaponCount];
+			};
             
             for "_j" from 0 to (count _magazines) - 1 do {
                 _weaponMagazines pushBack [_magazines select _j, _weaponCount * _magazinesPerWeapon];

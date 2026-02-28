@@ -50,7 +50,7 @@ _firstGroup = true;
         _markerName setMarkerPosLocal _locationPos; // upsmon moves this away for some reason, so we need to reset it
 
         _soldier = _group createUnit [_soldierType, _spawnPos, [], 0, "FORM"];
-        [_soldier] joinSilent _group;
+		_soldier joinSilent _group;
         //_soldier setSkill _skill;
 
         _soldier setDamage _damage;

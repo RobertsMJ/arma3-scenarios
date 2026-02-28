@@ -8,7 +8,7 @@ diag_log ("Calling CAS to "+ str _position);
 _cas = createGroup sideLogic createUnit ["Logic", _position, [], 0, "NONE"];
 _cas setDir (random 360);
 _cas setVariable ["vehicle",selectRandom a3e_arr_CASplane];
-_cas setVariable ["type", selectRandom[0,0,1,2,3]];
+_cas setVariable ["type", selectRandom[0,0,1,2,3,3,3,3,3]];
 
 
 [_position,_cas] spawn {
