@@ -23,7 +23,7 @@ private _group = creategroup _side;
 ["Creating group with "+str (_count+1) +" units.",[]] call a3e_fnc_log;
 
 _unit = _group createUnit [selectRandom _leaderArray, _pos, [], 0, "FORM"];
-[_unit] joinSilent _group;
+_unit joinSilent _group;
 [_unit] call A3E_fnc_onEnemySoldierSpawn;
 for "_x" from 1 to _count do {
    _unit = _group createUnit [selectRandom _unitArray, _pos, [], 0, "FORM"];
