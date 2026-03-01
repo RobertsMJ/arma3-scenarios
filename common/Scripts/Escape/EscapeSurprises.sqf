@@ -202,7 +202,7 @@ while {true} do {
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
-                        _soldier joinSilent _dropGroup;
+                        [_soldier] joinSilent _dropGroup;
                         _soldier setRank "CAPTAIN";
                         _soldier call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
                         _dropUnits pushBack _soldier;
@@ -250,9 +250,9 @@ while {true} do {
                     //"O_Pilot_F" createUnit [[0, 0, 30], _group, "", (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill)), "LIEUTNANT"];
                     //"O_Pilot_F" createUnit [[0, 0, 30], _group, "", (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill)), "LIEUTNANT"];
                     _unit = _group createUnit [_crewtype, [0, 0, 30], [], 0, "FORM"];
-                    _unit joinSilent _group;
+                    [_unit] joinSilent _group;
                     _unit = _group createUnit [_crewtype, [0, 0, 30], [], 0, "FORM"];
-                    _unit joinSilent _group;
+                    [_unit] joinSilent _group;
 
                     ((units _group) select 0) assignAsDriver _chopper;
                     ((units _group) select 0) moveInDriver _chopper;

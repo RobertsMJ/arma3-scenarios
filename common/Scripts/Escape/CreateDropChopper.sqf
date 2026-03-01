@@ -43,9 +43,9 @@ _group = createGroup _side;
 //_crewType createUnit [[0, 0, 30], _group, "", (_minSkill + random (_maxSkill - _minSkill)), "LIEUTNANT"];
 //_crewType createUnit [[0, 0, 30], _group, "", (_minSkill + random (_maxSkill - _minSkill)), "LIEUTNANT"];
 _unit = _group createUnit [_crewType, [0, 0, 30], [], 0, "FORM"];
-_unit joinSilent _group;
+[_unit] joinSilent _group;
 _unit = _group createUnit [_crewType, [0, 0, 30], [], 0, "FORM"];
-_unit joinSilent _group;
+[_unit] joinSilent _group;
 
 
 _pilot = (units _group) select 0;

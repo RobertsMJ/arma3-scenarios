@@ -16,7 +16,7 @@ private _group = creategroup _side;
 
 for "_x" from 1 to _count do {
    private _unit = _group createUnit [selectRandom _unitArray, _pos, [], 0, "FORM"];
-   _unit joinSilent _group;
+   [_unit] joinSilent _group;
    [_unit] call A3E_fnc_onCivilianSpawn;
 };
 ["Creating civ group with "+str (_count) +" units.",["Spawning"],[_side, units _group]] call a3e_fnc_log;
