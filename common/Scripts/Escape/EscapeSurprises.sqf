@@ -153,7 +153,7 @@ while {true} do {
                     for [{_i = 0}, {_i < _noOfDropUnits}, {_i = _i + 1}] do {
                         _soldierType = A3E_arr_recon_InfantryTypes select floor (random count A3E_arr_recon_InfantryTypes);
                         _soldier = _dropGroup createUnit [_soldierType, [0,0,30], [], 0, "FORM"];
-                        _soldier joinSilent _dropGroup;
+                        [_soldier] joinSilent _dropGroup;
                         //_soldier setSkill (_minEnemySkill + random (_maxEnemySkill - _minEnemySkill));
 						//[_soldier, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
                         _soldier setRank "CAPTAIN";

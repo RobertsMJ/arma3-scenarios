@@ -128,7 +128,7 @@ while {true} do {
             _infantryType = _possibleInfantryTypes select floor (random count _possibleInfantryTypes);
             //_infantryType createUnit [_spawnPos, _group,"", _skill, "PRIVATE"];
 			_unit = _group createUnit [_infantryType, _spawnPos, [], 0, "FORM"];
-            _unit joinSilent _group;
+            [_unit] joinSilent _group;
         };
 
         {

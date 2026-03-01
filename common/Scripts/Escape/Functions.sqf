@@ -530,7 +530,7 @@ drn_fnc_Escape_PopulateVehicle = {
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
         _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
-        _insurgentSoldier joinSilent _group;
+        [_insurgentSoldier] joinSilent _group;
 
         _insurgentSoldier setRank "LIEUTENANT";
         _insurgentSoldier moveInGunner _vehicle;
@@ -550,7 +550,7 @@ drn_fnc_Escape_PopulateVehicle = {
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
         _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
-        _insurgentSoldier joinSilent _group;
+        [_insurgentSoldier] joinSilent _group;
 
         _insurgentSoldier setRank "LIEUTENANT";
         _insurgentSoldier moveInCommander _vehicle;
@@ -570,7 +570,7 @@ drn_fnc_Escape_PopulateVehicle = {
     while {_continue && _soldierCount <= _maxSoldiersCount} do {
         _unitType = selectRandom _unitTypes;
         _insurgentSoldier = _group createUnit [_unitType, [0,0,0], [], 0, "FORM"];
-        _insurgentSoldier joinSilent _group;
+        [_insurgentSoldier] joinSilent _group;
 
         _insurgentSoldier setRank "LIEUTENANT";
         _insurgentSoldier moveInCargo _vehicle;

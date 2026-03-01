@@ -39,7 +39,7 @@ if (count _groups == 0) exitWith {};
 			_markerName setMarkerPosLocal _villagePos;
 
 		 	_soldierObj = _newGroup createUnit [_soldierType, _soldierPos, [], 0, "FORM"];
-			_soldierObj joinSilent _newGroup;
+			[_soldierObj] joinSilent _newGroup;
 			//_soldierObj setSkill _skill;
 //			[_soldierObj, a3e_var_Escape_enemyMinSkill] call EGG_EVO_skill;
 			_soldierObj setDamage _damage;
