@@ -7,8 +7,8 @@ dotenv: ['.env'] # Ensure you have an .env file with LOCAL_OUT_PATH mapped to yo
 vars:
   OUT_PATH: './out'
   ARCHIVE_FILE: arma3missions
-  MAPS: ['Altis', 'Tanoa', 'Takistan', 'Sara']
-  FACTIONS: ['CUP_RU_vs_BAF', 'CUP_USMC_vs_SLA', 'CUP_RU_vs_USMC_and_RACS']
+  MAPS: ['Altis', 'Tanoa', 'Takistan', 'Sara', 'Zargabad']
+  FACTIONS: ['CUP_RU_vs_BAF', 'CUP_USMC_vs_SLA', 'CUP_RU_vs_USMC_and_RACS', 'NATO_vs_CSAT']
 
 tasks:
   build:
