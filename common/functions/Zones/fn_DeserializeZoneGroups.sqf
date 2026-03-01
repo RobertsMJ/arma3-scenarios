@@ -34,7 +34,7 @@ private _serializedGroups = _zone get "serializedgroups";
 		{
 			(values _x) params (keys _x);
 			private _unit = _grp createUnit [_class, _pos, [], 0, "FORM"];
-			_unit joinSilent _grp;
+			[_unit] joinSilent _grp;
 			_unit setposATL _pos;
 			_unit setdir _dir;
 			_unit setrank _rank;

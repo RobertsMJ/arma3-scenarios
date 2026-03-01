@@ -73,7 +73,7 @@ tasks:
       - task: build
       - tar -czvf '{{.ARCHIVE_FILE}}.tar.gz' -C '{{.OUT_PATH}}' .
       - mv '{{.ARCHIVE_FILE}}.tar.gz' out/
-  
+
   radio:
     silent: true
     vars:
@@ -97,6 +97,6 @@ tasks:
       STATION_FILE: "{{.OUT_PATH}}/radio_stations.txt"
     cmds:
       - echo "  class my_station_{{.NAME}} {" >> "{{.STATION_FILE}}"
-      - echo "    name = \"{{.NAME}}\"" >> "{{.STATION_FILE}}"
-      - echo "    url = \"{{.STATION_URL}}\"" >> "{{.STATION_FILE}}"
+      - echo "    name = \"{{.NAME}}\";" >> "{{.STATION_FILE}}"
+      - echo "    url = \"{{.STATION_URL}}\";" >> "{{.STATION_FILE}}"
       - echo "  };" >> "{{.STATION_FILE}}"

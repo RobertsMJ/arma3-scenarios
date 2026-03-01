@@ -503,7 +503,7 @@ call A3E_fnc_InitTraps;
 
         //(a3e_arr_Escape_StartPositionGuardTypes select floor (random count a3e_arr_Escape_StartPositionGuardTypes)) createUnit [_pos, _guardGroup, "", (0.5), "CAPTAIN"];
         _unit = _guardGroup createUnit [(a3e_arr_Escape_StartPositionGuardTypes select floor (random count a3e_arr_Escape_StartPositionGuardTypes)), _pos, [], 0, "FORM"];
-		_unit joinSilent _guardGroup;
+		[_unit] joinSilent _guardGroup;
         if (count units _guardGroup >= 2) then {
             _createNewGroup = true;
         };

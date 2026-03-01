@@ -4,7 +4,7 @@ _unit setvariable ["ATR_Ragdolling",true];
 private _group = creategroup (side _unit);
 [_unit, true] remoteExec ["hideObject", 0, false];
 private _dummy = _group createUnit [typeof _unit, [0,0,0], [], 0, "FORM"];
-_dummy joinSilent _group;
+[_dummy] joinSilent _group;
 if(!isNull _dummy) then {
 	_dummy setposASL getPosASL _unit;
 	_dummy setdir getdir _unit;
