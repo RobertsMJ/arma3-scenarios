@@ -182,7 +182,7 @@ class Mission
 		class Item9
 		{
 			dataType="Marker";
-			position[]={3016.1604,5.7015033,3195.6372};
+			position[]={3084.3555,14.00505,3709.676};
 			name="A3E_HeliExtractionPos8";
 			type="Empty";
 			id=9;
@@ -190,11 +190,10 @@ class Mission
 		class Item10
 		{
 			dataType="Marker";
-			position[]={3015.0654,5.7617874,3245.3193};
+			position[]={3083.2605,14.369811,3759.3582};
 			name="A3E_HeliExtractionPos8_1";
 			type="Empty";
 			id=10;
-			atlOffset=4.7683716e-07;
 		};
 		class Item11
 		{
@@ -235,7 +234,7 @@ class Mission
 		class Item15
 		{
 			dataType="Marker";
-			position[]={4516.707,10.045623,2980.0237};
+			position[]={4469.2544,18.513668,3880.7573};
 			name="A3E_HeliExtractionPos6";
 			type="Empty";
 			angle=114.39182;
@@ -254,12 +253,11 @@ class Mission
 		class Item17
 		{
 			dataType="Marker";
-			position[]={4482.5566,10.316344,2942.208};
+			position[]={4435.104,18.520229,3842.9417};
 			name="A3E_HeliExtractionPos6_1";
 			type="Empty";
 			angle=154.57652;
 			id=17;
-			atlOffset=-9.5367432e-07;
 		};
 		class Item18
 		{
@@ -285,14 +283,14 @@ class Mission
 			position[]={11398.171,190.51051,11528.605};
 			name="A3E_HeliExtractionSpawnPos5";
 			type="Empty";
-			angle=212.27051;
+			angle=212.27049;
 			id=20;
 			atlOffset=-3;
 		};
 		class Item21
 		{
 			dataType="Marker";
-			position[]={2610.3645,32.86792,4681.7261};
+			position[]={2933.9456,27.368492,4874.3306};
 			name="A3E_HeliExtractionPos4";
 			type="Empty";
 			angle=34.697063;
@@ -301,7 +299,7 @@ class Mission
 		class Item22
 		{
 			dataType="Marker";
-			position[]={2604.6194,34.152466,4734.6299};
+			position[]={2928.2004,28.06962,4927.2344};
 			name="A3E_HeliExtractionPos4_1";
 			type="Empty";
 			angle=42.413155;
@@ -313,14 +311,14 @@ class Mission
 			position[]={-1442.9087,135.13222,5275.1514};
 			name="A3E_HeliExtractionSpawnPos4";
 			type="Empty";
-			angle=97.790558;
+			angle=97.79055;
 			id=23;
 			atlOffset=-3;
 		};
 		class Item24
 		{
 			dataType="Marker";
-			position[]={3475.5713,21.406673,1839.3105};
+			position[]={2857.4705,3.2236145,2107.4512};
 			name="A3E_HeliExtractionPos3";
 			type="Empty";
 			id=24;
@@ -329,7 +327,7 @@ class Mission
 		class Item25
 		{
 			dataType="Marker";
-			position[]={3525.7297,21.426888,1816.4585};
+			position[]={2907.6289,5.2739077,2084.5991};
 			name="A3E_HeliExtractionPos3_1";
 			type="Empty";
 			id=25;
@@ -337,7 +335,7 @@ class Mission
 		class Item26
 		{
 			dataType="Marker";
-			position[]={3505.5747,12.859159,1350.5029};
+			position[]={3555.3689,21.56595,1910.7925};
 			name="A3E_HeliExtractionPos2_1";
 			type="Empty";
 			angle=275.37973;
@@ -347,7 +345,7 @@ class Mission
 		class Item27
 		{
 			dataType="Marker";
-			position[]={3511.3894,13.484313,1389.042};
+			position[]={3561.5913,20.570005,1968.3857};
 			name="A3E_HeliExtractionPos2";
 			type="Empty";
 			angle=282.23303;
@@ -366,7 +364,7 @@ class Mission
 		class Item29
 		{
 			dataType="Marker";
-			position[]={4610.6611,23.168411,2291.7168};
+			position[]={4129.2974,25.516689,1953.3893};
 			name="A3E_HeliExtractionPos1";
 			type="Empty";
 			id=30;
@@ -375,7 +373,7 @@ class Mission
 		class Item30
 		{
 			dataType="Marker";
-			position[]={4605.6553,24.383587,2253.8838};
+			position[]={4173.7612,40.465225,1843.452};
 			name="A3E_HeliExtractionPos1_1";
 			type="Empty";
 			id=31;
@@ -981,7 +979,7 @@ class Mission
 		class Item68
 		{
 			dataType="Marker";
-			position[]={4941.7144,29.768105,6216.478};
+			position[]={4934.5669,29.481497,6101.3838};
 			name="A3E_HeliExtractionPos11";
 			type="Empty";
 			id=111;
@@ -989,7 +987,7 @@ class Mission
 		class Item69
 		{
 			dataType="Marker";
-			position[]={4879.9941,29.992294,6257.7422};
+			position[]={4872.8467,29.855497,6142.6479};
 			name="A3E_HeliExtractionPos11_1";
 			type="Empty";
 			id=112;
