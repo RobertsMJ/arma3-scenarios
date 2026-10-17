@@ -15,9 +15,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Setup go-task
-      uses: pnorton5432/setup-task@v1
-      with:
-        task-version: 3.48.0
+      uses: go-task/setup-task@v2
     - name: Build
       run: task ci
       env:
