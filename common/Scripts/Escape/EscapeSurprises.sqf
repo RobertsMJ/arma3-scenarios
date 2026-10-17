@@ -277,28 +277,28 @@ while {true} do {
                 };
 
 
-				if (_surpriseID == "SEARCHDRONE") then {
-                    private ["_chopper", "_result"];
+				// if (_surpriseID == "SEARCHDRONE") then {
+                //     private ["_chopper", "_result"];
 
-					_chopper = createVehicle [selectRandom a3e_arr_searchdrone, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
-					createVehicleCrew _chopper;
+				// 	_chopper = createVehicle [selectRandom a3e_arr_searchdrone, getMarkerPos "drn_russianSearchChopperStartPosMarker", [], random 360, "FLY"];
+				// 	createVehicleCrew _chopper;
 
-					_chopper lock false;
-					_chopper setVehicleVarName "a3e_searchdrone";
-					_chopper call compile format ["%1=_this;", "a3e_searchdrone"];
+				// 	_chopper lock false;
+				// 	_chopper setVehicleVarName "a3e_searchdrone";
+				// 	_chopper call compile format ["%1=_this;", "a3e_searchdrone"];
 
 
-                    //[_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), a3e_var_Escape_debugSearchChopper] execVM "Scripts\DRN\SearchChopper\SearchChopper.sqf";
-                    [_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), A3E_Debug] spawn A3E_fnc_SearchDrone;
+                //     //[_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), a3e_var_Escape_debugSearchChopper] execVM "Scripts\DRN\SearchChopper\SearchChopper.sqf";
+                //     [_chopper, drn_searchAreaMarkerName, (5 + random 15), (5 + random 15), A3E_Debug] spawn A3E_fnc_SearchDrone;
 
-                    // Create new russian search chopper
-                    _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
-                    _timeInSek = 30 * 60 + random (45 * 60);
-                    _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
-                    _surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
-                    _surprises set [count _surprises, _surprise];
-                    diag_log ("ESCAPE SURPRISE: " + str _surprise);
-                };
+                //     // Create new russian search chopper
+                //     _surpriseArgs = [_minEnemySkill, _maxEnemySkill];
+                //     _timeInSek = 30 * 60 + random (45 * 60);
+                //     _timeInSek = time + (_timeInSek * (0.5 + (4 - _enemyFrequency) / 4));
+                //     _surprise = ["SEARCHDRONE", _timeInSek, {[drn_searchAreaMarkerName] call drn_fnc_CL_MarkerExists}, false, _surpriseArgs];
+                //     _surprises set [count _surprises, _surprise];
+                //     diag_log ("ESCAPE SURPRISE: " + str _surprise);
+                // };
 
 				if (_surpriseID == "LEAFLETDRONE") then {
                     private ["_chopper", "_result", "_group","_helitype","_arr","_dronetype"];
